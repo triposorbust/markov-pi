@@ -1,2 +1,6 @@
 // andy builds a toy program in C.
 // $ ./markov_pi
+
+// not very accurate:
+// increase trial count?
+// better rand() function?
