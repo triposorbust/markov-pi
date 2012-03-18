@@ -18,11 +18,7 @@ int main()
 
   for (i=0; i<TRIAL_COUNT; i++) {
     Posn p = getPosn();
-    printf("(%f,%f)\n",p.x,p.y);
-    double d = dist(p,ctr);
-    printf("    %f\n",d);
-
-    if (d <= 0.5)
+    if (dist(p,ctr) <= 0.5)
       hits++;
   }
 
