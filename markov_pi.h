@@ -8,3 +8,5 @@ struct posn {
 typedef struct posn Posn;
 
 Posn getPosn();
+
+double dist(Posn, Posn);

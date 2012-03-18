@@ -13,12 +13,20 @@ int main()
   int i, hits = 0;
   double pi;
 
+  Posn ctr;
+  ctr.x = ctr.y = 0.5;
+
   for (i=0; i<TRIAL_COUNT; i++) {
     Posn p = getPosn();
     printf("(%f,%f)\n",p.x,p.y);
+    double d = dist(p,ctr);
+    printf("    %f\n",d);
+
+    if (d <= 0.5)
+      hits++;
   }
 
-  pi = (double)hits / (double)TRIAL_COUNT;
+  pi = 4.0 * (double)hits / (double)TRIAL_COUNT;
   printf("%f\n",pi);
   return 0;
 }
@@ -29,4 +37,11 @@ Posn getPosn()
   p.x = (double)rand() / (double)RAND_MAX;
   p.y = (double)rand() / (double)RAND_MAX;
   return p;
+}
+
+double dist(Posn a, Posn b)
+{
+  double dx = a.x - b.x;
+  double dy = a.y - b.y;
+  return sqrt(dx*dx + dy*dy);
 }
