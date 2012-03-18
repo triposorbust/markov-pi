@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include "markov_pi.h"
 
-#define TRIAL_COUNT 15
+#define TRIAL_COUNT 500000
 
 int main()
 {
